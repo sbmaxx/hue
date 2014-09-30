@@ -20,7 +20,8 @@ var HOUR = 60 * MINUTE;
 
 var lights = [LEFT, RIGHT, FLOOR];
 
-state = lightState.create().on().white(154, 100).transition(MINUTE * 10);
+// 154 — cold white, 500 — warm white
+state = lightState.create().on().white(500, 100).transition(MINUTE * 10);
 
 lights.forEach(function(light) {
     api.setLightState(light, state).then(displayResult).done();
